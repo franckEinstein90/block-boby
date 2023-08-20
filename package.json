@@ -1,8 +1,13 @@
 {
   "name": "block-bobby",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js", 
+  "types": "build/main.d.ts",
+  "files": [
+    "dist/**/*.js", 
+    "dist/**/*.d.ts"
+  ],
   "scripts": {
     "test": "mocha --require ts-node/register 'test/**/*.test.ts'",
     "start": "npm run build && node dist/main.js",

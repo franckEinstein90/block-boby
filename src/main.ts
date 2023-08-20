@@ -1,14 +1,15 @@
 
-import { blockBobby } from './block-bobby';
-import { printToConsole } from './output';
+export { blockBobby } from './block-bobby';
+export { IFace, FaceOptions} from './types'; 
 
 
-const localPrint = (IFace) => {
+
+/*const localPrint = (IFace) => {
     printToConsole(IFace, {paddingLeft: 10});
     console.log();
 }
 
-const mark = blockBobby({
+const mark = BlockBobby({
     faceWidth: 19, 
     mouth: '___',
     nose: 'o',
@@ -18,6 +19,8 @@ const mark = blockBobby({
     drawChin: true,
 });
 
+localPrint(mark);*/
+/*
 const bobby = blockBobby({
     faceWidth: 19, 
     mouth: '___', 
@@ -46,4 +49,4 @@ const jenny = blockBobby({
 
 });
 
-[bobby, mark, angelina, jenny].forEach(localPrint);
+[bobby, mark, angelina, jenny].forEach(localPrint);*/
