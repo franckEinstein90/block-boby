@@ -1,9 +1,9 @@
 {
   "name": "block-bobby",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/main.js", 
-  "types": "build/main.d.ts",
+  "types": "dist/main.d.ts",
   "files": [
     "dist/**/*.js", 
     "dist/**/*.d.ts"
