@@ -11,7 +11,8 @@ describe('The function blockBobby', () => {
             mouth: '___', 
             leftEye: "o",
             rightEye: "O", 
-            sideBorders: true
+            sideBorders: true,
+            drawChin: true
         });
         console.log(bobby.lines());
         expect(bobby).to.have.property('lines');
@@ -29,7 +30,8 @@ describe('The FaceOptions interface', () => {
             mouth: '*_*', 
             leftEye: "O",
             rightEye: "O",
-            sideBorders: true
+            sideBorders: true,
+            drawChin: true
         });
         console.log(bobby.lines());
         expect(bobby).to.have.property('lines');
@@ -47,9 +49,10 @@ describe('The sideborders property', () => {
             mouth: '___', 
             leftEye: "O",
             rightEye: "O",
-            sideBorders: false 
+            sideBorders: false, 
+            drawChin: true
         });
-        printToConsole(bobby);
+        console.log(bobby.lines());
         expect(bobby).to.have.property('lines');
         expect(bobby.lines()).to.be.an('array');
         expect(bobby.lines().length).to.equal(8);

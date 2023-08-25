@@ -36,8 +36,7 @@ const _addMouth = (mouthRow: string, mouth: string, mouthSize: number): string =
     const mouthLength = mouth.length;
     const mouthStart = Math.floor(mouthRow.length / 2) - Math.floor(mouthLength / 2);
     const mouthEnd = mouthStart + mouthLength;
-    const mouthSpace = repeatChar(' ', mouthSize);
-    return mouthRow.substring(0, mouthStart) + mouthSpace + mouth + mouthSpace + mouthRow.substring(mouthEnd);
+    return mouthRow.substring(0, mouthStart) + mouth + mouthRow.substring(mouthEnd);
 }
 
 
@@ -71,13 +70,12 @@ export const blockBobby = (options: FaceOptions): IFace => {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const faceFrame = _makeFaceFrame(options);
-    const isEvenWidth = options.faceWidth % 2 === 0; 
 
-    const hair = repeatChar(options.hair || '#', options.faceWidth-2);
-    const bottom = repeatChar('#', options.faceWidth - 2);
+    const hair = repeatChar(options.hair || '#', faceFrame.width - 2);
+    const bottom = repeatChar('#', faceFrame.width - 2);
     
 
-    const faceShape = _makeFaceShapeOutline(options.faceWidth - 2);
+    const faceShape = _makeFaceShapeOutline(faceFrame.width - 2);
     const eyebrowRow = Math.floor(faceShape.length / 4);
     const spaceBetweenEyes = repeatChar(' ', options.eyeDistance || 5);
     faceShape[eyebrowRow] = _addEyebrows(faceShape[eyebrowRow], spaceBetweenEyes); 
@@ -86,7 +84,7 @@ export const blockBobby = (options: FaceOptions): IFace => {
     faceShape[eyeRow] = _addEyes(faceShape[eyeRow], options.leftEye, options.rightEye, spaceBetweenEyes);
 
 
-   const nose = options.nose || isEvenWidth? '<>': '-';
+   const nose = options.nose || faceFrame.isEvenWidth? '<>': '-';
     const noseRow = eyeRow + 1; 
     faceShape[noseRow] = _addNose(faceShape[noseRow], nose); //`${halfFace}${nose}${halfFace}`; //faceShape[noseRow].replace('*', nose);
     
