@@ -1,4 +1,7 @@
 # block-boby
+[npm package link](https://www.npmjs.com/package/block-bobby)
+
+## Description
 draws ascii character faces, for example: 
 ```
  |||||||||||||||||
